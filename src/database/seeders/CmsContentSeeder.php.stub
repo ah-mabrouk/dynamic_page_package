@@ -1,0 +1,161 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use SolutionPlus\Cms\database\seeders\CmsSeeder;
+
+class CmsContentSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run(): void
+    {
+        CmsSeeder::seedContent([
+            // [
+            //     'page_path' => 'home',
+
+            //     'translation_data' => [
+            //         'en' => [
+            //             'name' => 'Home',
+            //             'title' => 'Page Title',
+            //             'description' => 'Page Description',
+            //         ],
+            //         'ar' => [
+            //             'name' => 'الرئيسية',
+            //             'title' => 'عنوان الصفحة',
+            //             'description' => 'تفاصيل الصفحة',
+            //         ],
+            //     ],
+
+            //     'sections' => [
+            //         [
+            //             'identifier' => 'first-section',
+            //             'has_title' => true,
+            //             'has_description' => true,
+            //             'images_count' => 1,
+            //             'has_items' => false,
+            //             'item_images_count' => 0,
+            //             'has_items_title' => false,
+            //             'has_items_description' => false,
+            //             'title_validation_text' => null,
+            //             'description_validation_text' => null,
+
+            //             'translation_data' => [
+            //                 'en' => [
+            //                     'name' => 'Section Name',
+            //                 ],
+            //                 'ar' => [
+            //                     'name' => 'اسم القسم',
+            //                 ],
+            //             ],
+            //         ],
+            //         [
+            //             'identifier' => 'second-section',
+            //             'has_title' => true,
+            //             'has_description' => true,
+            //             'images_count' => 1,
+            //             'has_items' => true,
+            //             'item_images_count' => 1,
+            //             'has_items_title' => true,
+            //             'has_items_description' => true,
+            //             'title_validation_text' => 'sometimes|string|min:3|max:190',
+            //             'description_validation_text' => 'sometimes|string|min:3|max:100000',
+
+            //             'translation_data' => [
+            //                 'en' => [
+            //                     'name' => 'Section Name',
+            //                 ],
+            //                 'ar' => [
+            //                     'name' => 'اسم القسم',
+            //                 ],
+            //             ],
+
+            //             'items' => [
+            //                 [
+            //                     'identifier' => 'second-section-item-1',
+
+            //                     'title_validation_text' => 'sometimes|string|min:3|max:190',
+            //                     'description_validation_text' => 'sometimes|string|min:3|max:190',
+
+            //                     'translation_data' => [
+            //                         'en' => [
+            //                             'name' => 'item 1',
+            //                         ],
+            //                         'ar' => [
+            //                             'name' => 'عنصر 1',
+            //                         ],
+            //                     ],
+
+            //                     'custom_attributes' => [
+            //                         [
+            //                             'key' => 'second-section-item-1-attribute-1',
+            //                             'value_validation_text' => 'sometimes|string|min:3|max:190',
+            //                             'translation_data' => [
+            //                                 'en' => [
+            //                                     'name' => 'Attribute 1',
+            //                                     'value' => 'Attribute value'
+            //                                 ],
+            //                                 'ar' => [
+            //                                     'name' => 'عنصر 1',
+            //                                     'value' => 'قيمة العنصر',
+            //                                 ],
+            //                             ],
+            //                         ],
+            //                         [
+            //                             'key' => 'second-section-item-1-attribute-2',
+            //                             'value_validation_text' => null,
+            //                             'translation_data' => [
+            //                                 'en' => [
+            //                                     'name' => 'Attribute 2',
+            //                                     'value' => null
+            //                                 ],
+            //                                 'ar' => [
+            //                                     'name' => 'عنصر 2',
+            //                                     'value' => null
+            //                                 ],
+            //                             ],
+            //                         ]
+            //                     ]
+            //                 ]
+            //             ],
+
+            //             'custom_attributes' => [
+            //                 [
+            //                     'key' => 'second-section-attribute-1',
+            //                     'value_validation_text' => 'sometimes|string|min:3|max:190',
+            //                     'translation_data' => [
+            //                         'en' => [
+            //                             'name' => 'Attribute 1',
+            //                             'value' => 'Attribute value'
+            //                         ],
+            //                         'ar' => [
+            //                             'name' => 'عنصر 1',
+            //                             'value' => 'قيمة العنصر',
+            //                         ],
+            //                     ],
+            //                 ],
+            //                 [
+            //                     'key' => 'second-section-attribute-2',
+            //                     'value_validation_text' => null,
+            //                     'translation_data' => [
+            //                         'en' => [
+            //                             'name' => 'Attribute 2',
+            //                             'value' => null
+            //                         ],
+            //                         'ar' => [
+            //                             'name' => 'عنصر 2',
+            //                             'value' => null
+            //                         ],
+            //                     ],
+            //                 ]
+            //             ]
+            //         ],
+            //     ]
+            // ],
+        ]);
+    }
+}

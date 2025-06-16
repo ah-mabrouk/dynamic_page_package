@@ -1,0 +1,54 @@
+{
+    "name": "solutionplus/cms",
+    "type": "library",
+    "description": "A comprehensive CMS package with pages, sections, items, custom attributes, and keywords support",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Omar Ashraf",
+            "email": "o.ashraf@otas.net"
+        },
+        {
+            "name": "Mohamed Elmaadawi",
+            "email": "m.elmaadawi@otas.net"
+        },
+        {
+            "name": "Mohamed Wael",
+            "email": "m.wael@otas.net"
+        },
+        {
+            "name": "Habiba Hamed",
+            "email": "h.hamed@otas.net"
+        }
+    ],
+    "require": {
+        "laravel/framework": ">=9",
+        "mabrouk/translatable": ">=2.0",
+        "mabrouk/filterable": ">=1.0",
+        "mabrouk/mediable": ">=3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "SolutionPlus\\Cms\\": "src/",
+            "Database\\Factories\\": "src/database/factories/",
+            "Database\\Seeders\\": "src/database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SolutionPlus\\Cms\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SolutionPlus\\Cms\\CmsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

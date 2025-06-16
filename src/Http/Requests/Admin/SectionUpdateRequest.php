@@ -1,0 +1,78 @@
+<?php
+
+namespace SolutionPlus\Cms\Http\Requests\Admin;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\DB;
+use Mabrouk\Translatable\Rules\RequiredForLocale;
+use Mabrouk\Translatable\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\Cms\Models\Section;
+
+class SectionUpdateRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => [
+                'string',
+                'min:3',
+                'max:190',
+                new UniqueForLocaleWithinParent(
+                    parentObject: $this->page,
+                    relationName: 'sections',
+                    translationForeignKeyName: 'section_id',
+                    modelObject: $this->section,
+                ),
+                new RequiredForLocale($this->section),
+            ],
+            'title' => array_merge([
+                function ($attribute, $value, $fail) {
+                    if (!$this->section->has_title) {
+                        return $fail(__('sections.errors.title_not_available'));
+                    }
+                }
+            ], explode('|', $this->section->title_validation_text)),
+            'description' => array_merge([
+                function ($attribute, $value, $fail) {
+                    if (!$this->section->has_description) {
+                        return $fail(__('sections.errors.description_not_available'));
+                    }
+                }
+            ], explode('|', $this->section->description_validation_text)),
+        ];
+    }
+
+    /**
+     * Update the section with the validated data.
+     */
+    public function updateSection(): Section
+    {
+        return DB::transaction(function () {
+            $this->section->update();
+
+            return $this->section->refresh();
+        });
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => __('solutionplus/cms/sections.attributes.name'),
+            'title' => __('solutionplus/cms/sections.attributes.title'),
+            'description' => __('solutionplus/cms/sections.attributes.description'),
+        ];
+    }
+}
