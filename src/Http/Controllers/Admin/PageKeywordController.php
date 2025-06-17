@@ -28,7 +28,6 @@ class PageKeywordController extends Controller
     public function store(PageKeywordStoreRequest $request, Page $page)
     {
         $page = $request->syncKeywords();
-        $page->load(['keywords', 'sections']);
 
         return response([
             'message' => __('solutionplus/cms/pages.update'),
