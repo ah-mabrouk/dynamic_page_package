@@ -25,7 +25,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        $page->load(['sections.images', 'sections.sectionItems.images', 'sections.customAttributes', 'sections.sectionItems.customAttributes']);
+        $page->load(['sections.media', 'sections.sectionItems.media', 'sections.customAttributes', 'sections.sectionItems.customAttributes']);
         
         return response([
             'page' => new PageResource($page),
