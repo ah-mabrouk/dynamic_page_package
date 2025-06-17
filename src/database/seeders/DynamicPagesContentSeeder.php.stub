@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use SolutionPlus\DynamicPages\database\seeders\CmsSeeder;
+use SolutionPlus\DynamicPages\database\seeders\DynamicPagesSeeder;
 
-class CmsContentSeeder extends Seeder
+class DynamicPagesContentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
