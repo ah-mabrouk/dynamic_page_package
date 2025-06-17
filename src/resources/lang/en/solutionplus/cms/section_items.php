@@ -4,6 +4,7 @@ return [
     'store' => 'Section Item created successfully',
     'update' => 'Section Item updated successfully',
     'destroy' => 'Section Item deleted successfully',
+    'cant_destroy' => 'Section Item can not be deleted',
 
     'errors' => [
         'title_not_available' => 'Section Item title is not available',

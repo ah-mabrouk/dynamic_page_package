@@ -35,7 +35,7 @@ class SectionItemMediaController extends Controller
         $section_item->removeMedia($media);
 
         return response([
-            'message' => __('section_items.media.destroy'),
+            'message' => __('solutionplus/cms/section_items.media.destroy'),
         ]);
     }
 }
