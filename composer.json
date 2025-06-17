@@ -1,7 +1,7 @@
 {
     "name": "solutionplus/cms",
     "type": "library",
-    "description": "A comprehensive CMS package with pages, sections, items, custom attributes, and keywords support",
+    "description": "A comprehensive CMS package with dynamic pages, sections, items, custom attributes, and keywords support",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +22,7 @@
         }
     ],
     "require": {
-        "laravel/framework": ">=9",
+        "laravel/framework": ">=11.0",
         "mabrouk/translatable": ">=2.0",
         "mabrouk/filterable": ">=1.0",
         "mabrouk/mediable": ">=3"
@@ -35,7 +35,11 @@
             "SolutionPlus\\Cms\\": "src/",
             "Database\\Factories\\": "src/database/factories/",
             "Database\\Seeders\\": "src/database/seeders/"
-        }
+        },
+        "files": [
+            "src/Helpers/CmsHelperFunctions.php",
+            "src/Helpers/Tz.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
