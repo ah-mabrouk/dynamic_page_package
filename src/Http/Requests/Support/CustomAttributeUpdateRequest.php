@@ -4,7 +4,7 @@ namespace SolutionPlus\Cms\Http\Requests\Support;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
-use Mabrouk\Translatable\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
 use SolutionPlus\Cms\Models\CustomAttribute;
 
 class CustomAttributeUpdateRequest extends FormRequest

@@ -5,8 +5,8 @@ namespace SolutionPlus\Cms\Http\Requests\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
-use Mabrouk\Translatable\Rules\UniqueForLocaleWithinParent;
 use SolutionPlus\Cms\Models\Section;
+use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
 
 class SectionUpdateRequest extends FormRequest
 {

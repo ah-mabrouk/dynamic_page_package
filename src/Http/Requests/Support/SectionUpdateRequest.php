@@ -2,7 +2,7 @@
 
 namespace SolutionPlus\Cms\Http\Requests\Support;
 
-use Mabrouk\Translatable\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Http\FormRequest;
 use SolutionPlus\Cms\Models\Section;

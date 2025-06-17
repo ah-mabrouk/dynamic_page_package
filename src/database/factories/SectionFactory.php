@@ -2,7 +2,7 @@
 
 namespace SolutionPlus\Cms\database\factories;
 
-use App\Models\Page;
+use SolutionPlus\Cms\Models\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

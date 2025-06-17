@@ -4,7 +4,6 @@ namespace SolutionPlus\Cms\Http\Requests\Admin;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Http\FormRequest;
-use Mabrouk\Translatable\Rules\RequiredForLocale;
 use SolutionPlus\Cms\Models\Keyword;
 
 class KeywordUpdateRequest extends FormRequest
@@ -32,7 +31,7 @@ class KeywordUpdateRequest extends FormRequest
 
     protected function getValidatorInstance()
     {
-        $this->merge(format_json_strings_to_boolean(['is_visible']));
+        $this->merge(format_json_strings_to_boolean(['visible']));
         return parent::getValidatorInstance();
     }
 
@@ -51,7 +50,7 @@ class KeywordUpdateRequest extends FormRequest
     {
         return [
             'name' => __('solutionplus/cms/keywords.attributes.name'),
-            'is_visible' => __('solutionplus/cms/keywords.attributes.visible'),
+            'visible' => __('solutionplus/cms/keywords.attributes.visible'),
         ];
     }
 }

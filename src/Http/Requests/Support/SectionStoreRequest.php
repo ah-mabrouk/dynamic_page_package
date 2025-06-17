@@ -5,7 +5,7 @@ namespace SolutionPlus\Cms\Http\Requests\Support;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 use SolutionPlus\Cms\Models\Section;
-use Mabrouk\Translatable\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
 
 class SectionStoreRequest extends FormRequest
 {

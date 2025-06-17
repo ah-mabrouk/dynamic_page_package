@@ -2,10 +2,10 @@
 
 namespace SolutionPlus\Cms\Http\Requests\Support;
 
-use App\Rules\UniqueForLocaleWithinParent;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Http\FormRequest;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
+use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
 
 class SectionItemUpdateRequest extends FormRequest
 {
