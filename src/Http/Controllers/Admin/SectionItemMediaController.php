@@ -20,7 +20,6 @@ class SectionItemMediaController extends Controller
         }
 
         $sectionItem = $request->storeSectionItemMedia();
-        $sectionItem->load(['section', 'images', 'customAttributes']);
 
         return response([
             'message' => __('solutionplus/cms/section_items.media.store'),

@@ -31,7 +31,6 @@ class SectionItemController extends Controller
     public function store(SectionItemStoreRequest $request, Page $page, Section $section)
     {
         $sectionItem = $request->sectionItemStore();
-        $sectionItem->load(['section', 'images', 'customAttributes']);
 
         return response([
             'message' => __('solutionplus/cms/section_items.store'),
@@ -44,8 +43,6 @@ class SectionItemController extends Controller
      */
     public function show(Page $page, Section $section, SectionItem $section_item)
     {
-        $section_item->load(['section', 'images', 'customAttributes']);
-        
         return response([
             'section_item' => new SectionItemResource($section_item),
         ]);
@@ -57,7 +54,6 @@ class SectionItemController extends Controller
     public function update(SectionItemUpdateRequest $request, Page $page, Section $section, SectionItem $section_item)
     {
         $request->sectionItemUpdate();
-        $section_item->load(['section', 'images', 'customAttributes']);
 
         return response([
             'message' => __('solutionplus/cms/section_items.update'),
