@@ -16,7 +16,7 @@ if (! function_exists('class_name_of')) {
     (
         string $class,
         bool $withNamespace = false,
-        string $namespace = 'Mabrouk\ProjectSetting\Models\\',
+        string $namespace = 'SolutionPlus\Cms\\Models\\',
         $trailing = ''
     ) {
         $class = Str::camel(str_replace('-', '_', $class));

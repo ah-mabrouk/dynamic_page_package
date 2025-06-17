@@ -81,7 +81,6 @@ class CmsServiceProvider extends ServiceProvider
     protected function routeConfiguration(): array
     {
         return [
-            'namespace' => 'SolutionPlus\Cms\Http\Controllers',
             'prefix' => config('cms.package_routes_prefix'),
         ];
     }

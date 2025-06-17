@@ -22,16 +22,6 @@ class CmsSetupCommand extends Command
     protected $description = 'Install and Publish CMS Package';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return int
@@ -91,10 +81,7 @@ class CmsSetupCommand extends Command
     public function runMigration()
     {
         $this->info('Running migrate command...');
-        $this->call('migrate', [
-            '--force' => true,
-            '--path' => 'vendor/solution-plus/cms/database/migrations',
-        ]);
+        $this->call('migrate');
         $this->info('Migration completed successfully.');
     }
 }
