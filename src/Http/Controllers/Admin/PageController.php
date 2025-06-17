@@ -27,6 +27,8 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
+        $page->load(['keywords', 'sections']);
+        
         return response([
             'page' => new PageResource($page),
         ]);
@@ -38,6 +40,7 @@ class PageController extends Controller
     public function update(PageUpdateRequest $request, Page $page)
     {
         $page = $request->updatePage();
+        $page->load(['keywords', 'sections']);
 
         return response([
             'page' => new PageResource($page),
