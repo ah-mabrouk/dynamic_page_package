@@ -1,11 +1,11 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Requests\Support;
+namespace SolutionPlus\DynamicPages\Http\Requests\Support;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
-use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
-use SolutionPlus\Cms\Models\CustomAttribute;
+use SolutionPlus\DynamicPages\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\DynamicPages\Models\CustomAttribute;
 
 class CustomAttributeUpdateRequest extends FormRequest
 {
@@ -56,10 +56,10 @@ class CustomAttributeUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'key' => __('solutionplus/cms/custom_attributes.attributes.key'),
-            'name' => __('solutionplus/cms/custom_attributes.attributes.name'),
-            'value' => __('solutionplus/cms/custom_attributes.attributes.value'),
-            'value_validation_text' => __('solutionplus/cms/custom_attributes.attributes.value_validation_text'),
+            'key' => __('solutionplus/dynamic_pages/custom_attributes.attributes.key'),
+            'name' => __('solutionplus/dynamic_pages/custom_attributes.attributes.name'),
+            'value' => __('solutionplus/dynamic_pages/custom_attributes.attributes.value'),
+            'value_validation_text' => __('solutionplus/dynamic_pages/custom_attributes.attributes.value_validation_text'),
         ];
     }
 }

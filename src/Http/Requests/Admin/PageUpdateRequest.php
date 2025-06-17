@@ -1,11 +1,11 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Requests\Admin;
+namespace SolutionPlus\DynamicPages\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
-use SolutionPlus\Cms\Models\Page;
+use SolutionPlus\DynamicPages\Models\Page;
 
 class PageUpdateRequest extends FormRequest
 {
@@ -61,9 +61,9 @@ class PageUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('solutionplus/cms/pages.attributes.name'),
-            'title' => __('solutionplus/cms/pages.attributes.title'),
-            'description' => __('solutionplus/cms/pages.attributes.description'),
+            'name' => __('solutionplus/dynamic_pages/pages.attributes.name'),
+            'title' => __('solutionplus/dynamic_pages/pages.attributes.title'),
+            'description' => __('solutionplus/dynamic_pages/pages.attributes.description'),
         ];
     }
 }

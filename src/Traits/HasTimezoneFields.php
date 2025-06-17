@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionPlus\Cms\Traits;
+namespace SolutionPlus\DynamicPages\Traits;
 
 use Tz;
 

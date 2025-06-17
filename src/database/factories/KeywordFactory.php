@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionPlus\Cms\database\factories;
+namespace SolutionPlus\DynamicPages\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

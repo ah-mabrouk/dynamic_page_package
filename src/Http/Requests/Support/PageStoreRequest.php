@@ -1,8 +1,8 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Requests\Support;
+namespace SolutionPlus\DynamicPages\Http\Requests\Support;
 
-use SolutionPlus\Cms\Models\Page;
+use SolutionPlus\DynamicPages\Models\Page;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 
@@ -48,10 +48,10 @@ class PageStoreRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'path' => __('solutionplus/cms/pages.attributes.path'),
-            'name' => __('solutionplus/cms/pages.attributes.name'),
-            'title' => __('solutionplus/cms/pages.attributes.title'),
-            'description' => __('solutionplus/cms/pages.attributes.description'),
+            'path' => __('solutionplus/dynamic_pages/pages.attributes.path'),
+            'name' => __('solutionplus/dynamic_pages/pages.attributes.name'),
+            'title' => __('solutionplus/dynamic_pages/pages.attributes.title'),
+            'description' => __('solutionplus/dynamic_pages/pages.attributes.description'),
         ];
     }
 }

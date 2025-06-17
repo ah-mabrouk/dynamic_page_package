@@ -1,25 +1,25 @@
 <?php
 
-namespace SolutionPlus\Cms\Console\Commands;
+namespace SolutionPlus\DynamicPages\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class CmsSetupCommand extends Command
+class DynamicPagesSetupCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'cms:setup';
+    protected $signature = 'setup:dynamic-pages';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install and Publish CMS Package';
+    protected $description = 'Install and Publish dynamic-pages Package';
 
     /**
      * Execute the console command.
@@ -30,7 +30,7 @@ class CmsSetupCommand extends Command
     {
         $this->info('Publishing configuration...');
 
-        if (! $this->configExists('cms.php')) {
+        if (! $this->configExists('dynamic_pages.php')) {
             $this->publishConfiguration();
             $this->info('Published configuration');
         } else {
@@ -68,7 +68,7 @@ class CmsSetupCommand extends Command
     private function publishConfiguration($forcePublish = false)
     {
         $params = [
-            '--provider' => 'SolutionPlus\Cms\CmsServiceProvider',
+            '--provider' => 'SolutionPlus\DynamicPages\DynamicPagesServiceProvider',
         ];
 
         if ($forcePublish === true) {

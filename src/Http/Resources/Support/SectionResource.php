@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Resources\Support;
+namespace SolutionPlus\DynamicPages\Http\Resources\Support;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Mabrouk\Mediable\Http\Resources\MediaResource;

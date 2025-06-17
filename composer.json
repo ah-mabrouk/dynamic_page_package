@@ -1,7 +1,7 @@
 {
-    "name": "solutionplus/cms",
+    "name": "solutionplus/dynamic-pages",
     "type": "library",
-    "description": "A comprehensive CMS package with dynamic pages, sections, items, custom attributes, and keywords support",
+    "description": "A comprehensive dynamic-pages package with dynamic pages, sections, items, custom attributes, and keywords support",
     "license": "MIT",
     "authors": [
         {
@@ -32,24 +32,24 @@
     },
     "autoload": {
         "psr-4": {
-            "SolutionPlus\\Cms\\": "src/",
+            "SolutionPlus\\DynamicPages\\": "src/",
             "Database\\Factories\\": "src/database/factories/",
             "Database\\Seeders\\": "src/database/seeders/"
         },
         "files": [
-            "src/Helpers/CmsHelperFunctions.php",
+            "src/Helpers/DynamicPagesHelperFunctions.php",
             "src/Helpers/Tz.php"
         ]
     },
     "autoload-dev": {
         "psr-4": {
-            "SolutionPlus\\Cms\\Tests\\": "tests/"
+            "SolutionPlus\\DynamicPages\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "SolutionPlus\\Cms\\CmsServiceProvider"
+                "SolutionPlus\\DynamicPages\\DynamicPagesServiceProvider"
             ]
         }
     },

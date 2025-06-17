@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use SolutionPlus\Cms\database\seeders\CmsSeeder;
+use SolutionPlus\DynamicPages\database\seeders\CmsSeeder;
 
 class CmsContentSeeder extends Seeder
 {
@@ -14,7 +14,7 @@ class CmsContentSeeder extends Seeder
      */
     public function run(): void
     {
-        CmsSeeder::seedContent([
+        DynamicPagesSeeder::seedContent([
             // [
             //     'page_path' => 'home',
 

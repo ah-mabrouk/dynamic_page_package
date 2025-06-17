@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionPlus\Cms\Models;
+namespace SolutionPlus\DynamicPages\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;

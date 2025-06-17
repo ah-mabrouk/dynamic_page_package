@@ -1,6 +1,6 @@
-# SolutionPlus CMS
+# SolutionPlus Dynamic Pages
 
-A comprehensive Laravel CMS package that provides a robust content management system with pages, sections, items, custom attributes, and keywords support. Built with multilingual capabilities and media management integration.
+A comprehensive Laravel dynamic pages package that provides a robust content management system with pages, sections, items, custom attributes, and keywords support. Built with multilingual capabilities and media management integration.
 
 ## Features
 
@@ -26,7 +26,7 @@ A comprehensive Laravel CMS package that provides a robust content management sy
 Install the package via Composer:
 
 ```bash
-composer require solutionplus/cms
+composer require solutionplus/dynamic-pages
 ```
 
 ### Quick Setup
@@ -34,7 +34,7 @@ composer require solutionplus/cms
 Run the setup command to install and configure the package:
 
 ```bash
-php artisan cms:setup
+php artisan dynamic-pages:setup
 ```
 
 This command will:
@@ -48,7 +48,7 @@ If you prefer manual setup:
 
 1. **Publish the configuration file:**
 ```bash
-php artisan vendor:publish --provider="SolutionPlus\Cms\CmsServiceProvider"
+php artisan vendor:publish --provider="SolutionPlus\DynamicPages\DynamicPagesServiceProvider"
 ```
 
 2. **Run the migrations:**
@@ -63,7 +63,7 @@ php artisan config:cache
 
 ## Configuration
 
-After installation, you can find the configuration file at `config/cms.php`. Customize the package settings according to your needs.
+After installation, you can find the configuration file at `config/dynamic_pages.php`. Customize the package settings according to your needs.
 
 ## Usage
 
@@ -115,7 +115,7 @@ This package depends on:
 The package provides three types of API endpoints with different access levels:
 
 ### Admin Routes (Admin Interface)
-Base prefix: Configurable via `cms.package_admin_routes_prefix`
+Base prefix: Configurable via `dynamic_pages.package_admin_routes_prefix`
 
 - **Pages Management:**
   - `GET /pages` - List all pages
@@ -168,7 +168,7 @@ Base prefix: Configurable via `cms.package_admin_routes_prefix`
   - `PATCH /pages/{path}/sections/{identifier}/section-items/{item_identifier}/custom-attributes/{key}` - Partially update attribute
 
 ### Support Routes (Support Interface)
-Base prefix: Configurable via `cms.package_support_routes_prefix`
+Base prefix: Configurable via `dynamic_pages.package_support_routes_prefix`
 
 Full CRUD operations available for all resources:
 - `POST /pages` - Create page
@@ -184,14 +184,14 @@ Full CRUD operations available for all resources:
 - All other endpoints same as Admin routes but with full CRUD capabilities
 
 ### Website Routes (Public Interface)
-Base prefix: Configurable via `cms.package_website_routes_prefix`
+Base prefix: Configurable via `dynamic_pages.package_website_routes_prefix`
 
 - `GET /pages` - List public pages
 - `GET /pages/{path}` - Get specific public page (by path)
 
 ## Configuration
 
-The package can be configured via the `config/cms.php` file:
+The package can be configured via the `config/dynamic_pages.php` file:
 
 ### Route Configuration
 
@@ -214,7 +214,7 @@ The package can be configured via the `config/cms.php` file:
 'middlewares' => [
     'admin' => [
         // Add your admin middleware here
-        // Example: 'auth:admin', 'permission:manage-cms'
+        // Example: 'auth:admin', 'permission:manage-dynamic-pages'
     ],
     'support' => [
         // Add your support middleware here
@@ -229,7 +229,7 @@ The package can be configured via the `config/cms.php` file:
 
 ### Configuration Keys Usage
 
-- **`package_routes_prefix`**: Sets the global prefix for all CMS routes (e.g., 'api' results in `/api/pages`)
+- **`package_routes_prefix`**: Sets the global prefix for all dynamic pages routes (e.g., 'api' results in `/api/pages`)
 - **`package_admin_routes_prefix`**: Additional prefix for admin routes (e.g., 'admin' with global prefix results in `/api/admin/pages`)
 - **`package_support_routes_prefix`**: Additional prefix for support routes
 - **`package_website_routes_prefix`**: Additional prefix for public website routes
@@ -238,21 +238,21 @@ The package can be configured via the `config/cms.php` file:
 
 ## Content Seeding
 
-The package provides a comprehensive content seeding system to help you populate your CMS with initial content.
+The package provides a comprehensive content seeding system to help you populate your dynamic pages with initial content.
 
 ### Using the Content Seeder
 
 1. **Publish the Content Seeder:**
 ```bash
-php artisan vendor:publish --provider="SolutionPlus\Cms\CmsServiceProvider"
+php artisan vendor:publish --provider="SolutionPlus\DynamicPages\DynamicPagesServiceProvider"
 ```
 
-2. **Locate the Seeder:** Find the published seeder at `database/seeders/CmsContentSeeder.php`
+2. **Locate the Seeder:** Find the published seeder at `database/seeders/DynamicPagesContentSeeder.php`
 
 3. **Configure Content:** Edit the seeder file to define your content structure:
 
 ```php
-CmsSeeder::seedContent([
+DynamicPagesSeeder::seedContent([
     [
         'page_path' => 'home',
         'translation_data' => [
@@ -297,7 +297,7 @@ CmsSeeder::seedContent([
 
 4. **Run the Seeder:**
 ```bash
-php artisan db:seed --class=CmsContentSeeder
+php artisan db:seed --class=DynamicPagesContentSeeder
 ```
 
 ### Content Structure

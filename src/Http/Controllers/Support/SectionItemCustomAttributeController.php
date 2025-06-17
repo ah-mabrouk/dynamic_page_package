@@ -1,15 +1,15 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Support;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Support;
 
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Models\Section;
-use SolutionPlus\Cms\Models\SectionItem;
-use SolutionPlus\Cms\Models\CustomAttribute;
-use SolutionPlus\Cms\Http\Requests\Support\CustomAttributeUpdateRequest;
-use SolutionPlus\Cms\Http\Requests\Support\CustomAttributeStoreRequest;
-use SolutionPlus\Cms\Http\Resources\Support\CustomAttributeResource;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Models\Section;
+use SolutionPlus\DynamicPages\Models\SectionItem;
+use SolutionPlus\DynamicPages\Models\CustomAttribute;
+use SolutionPlus\DynamicPages\Http\Requests\Support\CustomAttributeUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Requests\Support\CustomAttributeStoreRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Support\CustomAttributeResource;
 
 class SectionItemCustomAttributeController extends Controller
 {
@@ -32,7 +32,7 @@ class SectionItemCustomAttributeController extends Controller
         $customAttribute = $request->storeCustomAttribute(relatedObject: $section_item);
 
         return response([
-            'message' => __('solutionplus/cms/custom_attributes.store'),
+            'message' => __('solutionplus/dynamic_pages/custom_attributes.store'),
             'custom_attribute' => new CustomAttributeResource($customAttribute),
         ]);
     }
@@ -55,7 +55,7 @@ class SectionItemCustomAttributeController extends Controller
         $request->updateCustomAttribute();
 
         return response([
-            'message' => __('solutionplus/cms/custom_attributes.update'),
+            'message' => __('solutionplus/dynamic_pages/custom_attributes.update'),
             'custom_attribute' => new CustomAttributeResource($custom_attribute),
         ]);
     }
@@ -67,12 +67,12 @@ class SectionItemCustomAttributeController extends Controller
     {
         if ($custom_attribute->remove()) {
             return response([
-                'message' => __('solutionplus/cms/custom_attributes.destroy'),
+                'message' => __('solutionplus/dynamic_pages/custom_attributes.destroy'),
             ]);
         }
 
         return response([
-            'message' => __('solutionplus/cms/custom_attributes.cant_destroy'),
+            'message' => __('solutionplus/dynamic_pages/custom_attributes.cant_destroy'),
         ], 409);
     }
 }

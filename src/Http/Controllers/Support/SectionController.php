@@ -1,15 +1,15 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Support;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Support;
 
-use SolutionPlus\Cms\Filters\Support\SectionFilter;
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Http\Requests\Support\SectionStoreRequest;
-use SolutionPlus\Cms\Http\Requests\Support\SectionUpdateRequest;
-use SolutionPlus\Cms\Http\Resources\Support\SectionResource;
-use SolutionPlus\Cms\Http\Resources\Support\SectionSimpleResource;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Models\Section;
+use SolutionPlus\DynamicPages\Filters\Support\SectionFilter;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Http\Requests\Support\SectionStoreRequest;
+use SolutionPlus\DynamicPages\Http\Requests\Support\SectionUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Support\SectionResource;
+use SolutionPlus\DynamicPages\Http\Resources\Support\SectionSimpleResource;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Models\Section;
 
 class SectionController extends Controller
 {
@@ -32,7 +32,7 @@ class SectionController extends Controller
         $section = $request->storeSection();
 
         return response([
-            'message' => __('solutionplus/cms/sections.store'),
+            'message' => __('solutionplus/dynamic_pages/sections.store'),
             'section' => new SectionResource($section),
         ]);
     }
@@ -55,7 +55,7 @@ class SectionController extends Controller
         $request->updateSection();
 
         return response([
-            'message' => __('solutionplus/cms/sections.update'),
+            'message' => __('solutionplus/dynamic_pages/sections.update'),
             'section' => new SectionResource($section),
         ]);
     }
@@ -67,12 +67,12 @@ class SectionController extends Controller
     {
         if ($section->remove()) {
             return response([
-                'message' => __('solutionplus/cms/sections.destroy'),
+                'message' => __('solutionplus/dynamic_pages/sections.destroy'),
             ]);
         }
 
         return response([
-            'message' => __('solutionplus/cms/sections.cant_destroy'),
+            'message' => __('solutionplus/dynamic_pages/sections.cant_destroy'),
         ], 409);
     }
 }

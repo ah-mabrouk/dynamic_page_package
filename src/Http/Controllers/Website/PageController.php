@@ -1,11 +1,11 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Website;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Website;
 
-use SolutionPlus\Cms\Filters\Website\PageFilter;
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Http\Resources\Website\PageResource;
-use SolutionPlus\Cms\Models\Page;
+use SolutionPlus\DynamicPages\Filters\Website\PageFilter;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Http\Resources\Website\PageResource;
+use SolutionPlus\DynamicPages\Models\Page;
 
 class PageController extends Controller
 {

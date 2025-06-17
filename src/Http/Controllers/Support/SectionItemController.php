@@ -1,16 +1,16 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Support;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Support;
 
-use SolutionPlus\Cms\Filters\Support\SectionItemFilter;
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Http\Requests\Support\SectionItemStoreRequest;
-use SolutionPlus\Cms\Http\Requests\Support\SectionItemUpdateRequest;
-use SolutionPlus\Cms\Http\Resources\Support\SectionItemResource;
-use SolutionPlus\Cms\Http\Resources\Support\SectionItemSimpleResource;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Models\Section;
-use SolutionPlus\Cms\Models\SectionItem;
+use SolutionPlus\DynamicPages\Filters\Support\SectionItemFilter;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Http\Requests\Support\SectionItemStoreRequest;
+use SolutionPlus\DynamicPages\Http\Requests\Support\SectionItemUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Support\SectionItemResource;
+use SolutionPlus\DynamicPages\Http\Resources\Support\SectionItemSimpleResource;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Models\Section;
+use SolutionPlus\DynamicPages\Models\SectionItem;
 
 class SectionItemController extends Controller
 {
@@ -33,7 +33,7 @@ class SectionItemController extends Controller
         $sectionItem = $request->sectionItemStore();
 
         return response([
-            'message' => __('solutionplus/cms/section_items.store'),
+            'message' => __('solutionplus/dynamic_pages/section_items.store'),
             'section_item' => new SectionItemResource($sectionItem),
         ]);
     }
@@ -56,7 +56,7 @@ class SectionItemController extends Controller
         $request->sectionItemUpdate();
 
         return response([
-            'message' => __('solutionplus/cms/section_items.update'),
+            'message' => __('solutionplus/dynamic_pages/section_items.update'),
             'section_item' => new SectionItemResource($section_item),
         ]);
     }
@@ -68,12 +68,12 @@ class SectionItemController extends Controller
     {
         if ($section_item->remove()) {
             return response([
-                'message' => __('solutionplus/cms/section_items.destroy'),
+                'message' => __('solutionplus/dynamic_pages/section_items.destroy'),
             ]);
         }
 
         return response([
-            'message' => __('solutionplus/cms/section_items.cant_destroy'),
+            'message' => __('solutionplus/dynamic_pages/section_items.cant_destroy'),
         ], 409);
     }
 }

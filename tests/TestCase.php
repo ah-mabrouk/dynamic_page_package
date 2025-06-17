@@ -1,8 +1,8 @@
 <?php
 
-namespace SolutionPlus\Cms\Tests;
+namespace SolutionPlus\DynamicPages\Tests;
 
-use SolutionPlus\Cms\CmsServiceProvider;
+use SolutionPlus\DynamicPages\DynamicPagesServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -15,7 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
   protected function getPackageProviders($app)
   {
     return [
-        CmsServiceProvider::class,
+        DynamicPagesServiceProvider::class,
     ];
   }
 

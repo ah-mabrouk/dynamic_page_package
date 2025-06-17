@@ -1,8 +1,8 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Requests\Admin;
+namespace SolutionPlus\DynamicPages\Http\Requests\Admin;
 
-use SolutionPlus\Cms\Models\Keyword;
+use SolutionPlus\DynamicPages\Models\Keyword;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -47,8 +47,8 @@ class KeywordStoreRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('solutionplus/cms/keywords.attributes.name'),
-            'visible' => __('solutionplus/cms/keywords.attributes.visible'),
+            'name' => __('solutionplus/dynamic_pages/keywords.attributes.name'),
+            'visible' => __('solutionplus/dynamic_pages/keywords.attributes.visible'),
         ];
     }
 }

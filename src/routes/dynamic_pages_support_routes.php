@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use SolutionPlus\Cms\Http\Controllers\Support\PageController;
-use SolutionPlus\Cms\Http\Controllers\Support\SectionController;
-use SolutionPlus\Cms\Http\Controllers\Support\SectionCustomAttributeController;
-use SolutionPlus\Cms\Http\Controllers\Support\SectionItemController;
-use SolutionPlus\Cms\Http\Controllers\Support\SectionItemCustomAttributeController;
-use SolutionPlus\Cms\Http\Controllers\Support\SectionItemMediaController;
-use SolutionPlus\Cms\Http\Controllers\Support\SectionMediaController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\PageController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\SectionController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\SectionCustomAttributeController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\SectionItemController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\SectionItemCustomAttributeController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\SectionItemMediaController;
+use SolutionPlus\DynamicPages\Http\Controllers\Support\SectionMediaController;
 
 Route::group([
     'as' => 'support.',
-    'prefix' => config('cms.package_support_routes_prefix'),
-    'middleware' => array_unique(array_merge(config('cms.middlewares.support'), [
+    'prefix' => config('dynamic_pages.package_support_routes_prefix'),
+    'middleware' => array_unique(array_merge(config('dynamic_pages.middlewares.support'), [
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ])),
 ], function () {

@@ -1,8 +1,8 @@
 <?php
 
-namespace SolutionPlus\Cms\Models;
+namespace SolutionPlus\DynamicPages\Models;
 
-use SolutionPlus\Cms\Traits\HasTimezoneFields;
+use SolutionPlus\DynamicPages\Traits\HasTimezoneFields;
 use Mabrouk\Mediable\Models\Media;
 use Mabrouk\Mediable\Traits\Mediable;
 use Illuminate\Database\Eloquent\Model;

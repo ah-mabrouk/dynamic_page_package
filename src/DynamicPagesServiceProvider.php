@@ -1,13 +1,13 @@
 <?php
 
-namespace SolutionPlus\Cms;
+namespace SolutionPlus\DynamicPages;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use SolutionPlus\Cms\Console\Commands\CmsSetupCommand;
+use SolutionPlus\DynamicPages\Console\Commands\DynamicPagesSetupCommand;
 
-class CmsServiceProvider extends ServiceProvider
+class DynamicPagesServiceProvider extends ServiceProvider
 {
     private array $packageMigrations = [
         'create_custom_attribute_translations_table',
@@ -24,7 +24,7 @@ class CmsServiceProvider extends ServiceProvider
     ];
 
     private array $packageSeeders = [
-        'CmsContentSeeder',
+        'DynamicPagesContentSeeder',
     ];
 
     /**
@@ -40,14 +40,14 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        require_once __DIR__ . '/Helpers/CmsHelperFunctions.php';
+        require_once __DIR__ . '/Helpers/DynamicPagesHelperFunctions.php';
 
         $this->registerRoutes();
 
         if ($this->app->runningInConsole()) {
 
             $this->commands([
-                CmsSetupCommand::class
+                DynamicPagesSetupCommand::class
             ]);
 
             $this->publishMigrations();
@@ -64,11 +64,11 @@ class CmsServiceProvider extends ServiceProvider
      */
     protected function registerRoutes(): void
     {
-        if (config('cms.load_routes')) {
+        if (config('dynamic_pages.load_routes')) {
             Route::group($this->routeConfiguration(), function () {
-                $this->loadRoutesFrom(__DIR__ . '/routes/cms_admin_routes.php');
-                $this->loadRoutesFrom(__DIR__ . '/routes/cms_support_routes.php');
-                $this->loadRoutesFrom(__DIR__ . '/routes/cms_website_routes.php');
+                $this->loadRoutesFrom(__DIR__ . '/routes/dynamic_pages_admin_routes.php');
+                $this->loadRoutesFrom(__DIR__ . '/routes/dynamic_pages_support_routes.php');
+                $this->loadRoutesFrom(__DIR__ . '/routes/dynamic_pages_website_routes.php');
             });
         }
     }
@@ -81,7 +81,7 @@ class CmsServiceProvider extends ServiceProvider
     protected function routeConfiguration(): array
     {
         return [
-            'prefix' => config('cms.package_routes_prefix'),
+            'prefix' => config('dynamic_pages.package_routes_prefix'),
         ];
     }
 
@@ -93,7 +93,7 @@ class CmsServiceProvider extends ServiceProvider
         $migrationFiles = $this->migrationFiles();
 
         if (\count($migrationFiles) > 0) {
-            $this->publishes($migrationFiles, 'cms_migrations');
+            $this->publishes($migrationFiles, 'dynamic-pages-migrations');
         }
     }
 
@@ -117,7 +117,7 @@ class CmsServiceProvider extends ServiceProvider
         $seedersFiles = $this->seedersFiles();
 
         if (\count($seedersFiles) > 0) {
-            $this->publishes($seedersFiles, 'cms_seeders');
+            $this->publishes($seedersFiles, 'dynamic-pages-seeders');
         }
     }
 
@@ -156,7 +156,7 @@ class CmsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/resources/lang' => App::langPath(),
-        ], 'cms-lang');
+        ], 'dynamic-pages-lang');
     }
 
     /**
@@ -165,8 +165,8 @@ class CmsServiceProvider extends ServiceProvider
     protected function publishConfig(): void
     {
         $this->publishes([
-            __DIR__ . '/config/cms.php' => config_path('cms.php'),
-        ], 'cms-config');
+            __DIR__ . '/config/dynamic_pages.php' => config_path('dynamic_pages.php'),
+        ], 'dynamic-pages-config');
     }
 
     /**

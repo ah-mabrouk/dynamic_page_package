@@ -1,12 +1,12 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Requests\Admin;
+namespace SolutionPlus\DynamicPages\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
-use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
-use SolutionPlus\Cms\Models\SectionItem;
+use SolutionPlus\DynamicPages\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\DynamicPages\Models\SectionItem;
 
 class SectionItemUpdateRequest extends FormRequest
 {
@@ -41,14 +41,14 @@ class SectionItemUpdateRequest extends FormRequest
             'title' => array_merge([
                 function ($attribute, $value, $fail) {
                     if (!$this->section->has_items_title) {
-                        return $fail(__('section_items.errors.title_not_available'));
+                        return $fail(__('solutionplus/dynamic_pages/section_items.errors.title_not_available'));
                     }
                 }
             ], explode('|', $this->section_item->title_validation_text)),
             'description' => array_merge([
                 function ($attribute, $value, $fail) {
                     if (!$this->section->has_items_description) {
-                        return $fail(__('section_items.errors.description_not_available'));
+                        return $fail(__('solutionplus/dynamic_pages/section_items.errors.description_not_available'));
                     }
                 }
             ], explode('|', $this->section_item->description_validation_text)),
@@ -70,9 +70,9 @@ class SectionItemUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('solutionplus/cms/section_items.attributes.name'),
-            'title' => __('solutionplus/cms/section_items.attributes.title'),
-            'description' => __('solutionplus/cms/section_items.attributes.description'),
+            'name' => __('solutionplus/dynamic_pages/section_items.attributes.name'),
+            'title' => __('solutionplus/dynamic_pages/section_items.attributes.title'),
+            'description' => __('solutionplus/dynamic_pages/section_items.attributes.description'),
         ];
     }
 }

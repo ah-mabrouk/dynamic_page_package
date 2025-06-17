@@ -1,8 +1,8 @@
 <?php
 
-namespace SolutionPlus\Cms\Models;
+namespace SolutionPlus\DynamicPages\Models;
 
-use SolutionPlus\Cms\Traits\HasTimezoneFields;
+use SolutionPlus\DynamicPages\Traits\HasTimezoneFields;
 use Illuminate\Database\Eloquent\Model;
 use Mabrouk\Filterable\Traits\Filterable;
 use Mabrouk\Translatable\Traits\Translatable;

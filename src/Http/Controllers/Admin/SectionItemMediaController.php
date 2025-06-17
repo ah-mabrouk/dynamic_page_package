@@ -1,12 +1,12 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Admin;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Admin;
 
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Http\Requests\Admin\SectionItemMediaStoreRequest;
-use SolutionPlus\Cms\Models\SectionItem;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Http\Requests\Admin\SectionItemMediaStoreRequest;
+use SolutionPlus\DynamicPages\Models\SectionItem;
 use Mabrouk\Mediable\Models\Media;
-use SolutionPlus\Cms\Http\Resources\Admin\SectionItemResource;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionItemResource;
 
 class SectionItemMediaController extends Controller
 {
@@ -16,13 +16,13 @@ class SectionItemMediaController extends Controller
     public function store(SectionItemMediaStoreRequest $request, SectionItem $section_item)
     {
         if ($section_item->section->item_images_count <= $section_item->media()->count()) {
-            abort(409, __('solutionplus/cms/section_items.errors.images_exceed_allowed_count'));
+            abort(409, __('solutionplus/dynamic_pages/section_items.errors.images_exceed_allowed_count'));
         }
 
         $sectionItem = $request->storeSectionItemMedia();
 
         return response([
-            'message' => __('solutionplus/cms/section_items.media.store'),
+            'message' => __('solutionplus/dynamic_pages/section_items.media.store'),
             'section_item' => new SectionItemResource($sectionItem),
         ]);
     }
@@ -35,7 +35,7 @@ class SectionItemMediaController extends Controller
         $section_item->removeMedia($media);
 
         return response([
-            'message' => __('solutionplus/cms/section_items.media.destroy'),
+            'message' => __('solutionplus/dynamic_pages/section_items.media.destroy'),
         ]);
     }
 }

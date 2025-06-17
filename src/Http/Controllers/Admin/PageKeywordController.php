@@ -1,13 +1,13 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Admin;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Admin;
 
-use SolutionPlus\Cms\Filters\Admin\KeywordFilter;
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Http\Requests\Admin\PageKeywordStoreRequest;
-use SolutionPlus\Cms\Http\Resources\Admin\KeywordResource;
-use SolutionPlus\Cms\Http\Resources\Admin\PageResource;
+use SolutionPlus\DynamicPages\Filters\Admin\KeywordFilter;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Http\Requests\Admin\PageKeywordStoreRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\KeywordResource;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\PageResource;
 
 class PageKeywordController extends Controller
 {
@@ -30,7 +30,7 @@ class PageKeywordController extends Controller
         $page = $request->syncKeywords();
 
         return response([
-            'message' => __('solutionplus/cms/pages.update'),
+            'message' => __('solutionplus/dynamic_pages/pages.update'),
             'page' => new PageResource($page),
         ]);
     }

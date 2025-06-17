@@ -1,13 +1,13 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Support;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Support;
 
-use SolutionPlus\Cms\Filters\Support\PageFilter;
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Http\Requests\Support\PageStoreRequest;
-use SolutionPlus\Cms\Http\Requests\Support\PageUpdateRequest;
-use SolutionPlus\Cms\Http\Resources\Support\PageResource;
-use SolutionPlus\Cms\Models\Page;
+use SolutionPlus\DynamicPages\Filters\Support\PageFilter;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Http\Requests\Support\PageStoreRequest;
+use SolutionPlus\DynamicPages\Http\Requests\Support\PageUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Support\PageResource;
+use SolutionPlus\DynamicPages\Models\Page;
 
 class PageController extends Controller
 {
@@ -31,7 +31,7 @@ class PageController extends Controller
 
         return response([
             'page' => new PageResource($page),
-            'message' => __('solutionplus/cms/pages.store'),
+            'message' => __('solutionplus/dynamic_pages/pages.store'),
         ]);
     }
 
@@ -54,7 +54,7 @@ class PageController extends Controller
 
         return response([
             'page' => new PageResource($page),
-            'message' => __('solutionplus/cms/pages.update'),
+            'message' => __('solutionplus/dynamic_pages/pages.update'),
         ]);
     }
 
@@ -65,12 +65,12 @@ class PageController extends Controller
     {
         if ($page->remove()) {
             return response([
-                'message' => __('solutionplus/cms/pages.destroy'),
+                'message' => __('solutionplus/dynamic_pages/pages.destroy'),
             ]);
         }
 
         return response([
-            'message' => __('solutionplus/cms/pages.cant_destroy'),
+            'message' => __('solutionplus/dynamic_pages/pages.cant_destroy'),
         ], 409);
     }
 }

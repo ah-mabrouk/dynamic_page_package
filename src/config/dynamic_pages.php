@@ -3,10 +3,10 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | CMS Configuration
+    | dynamic_pages Configuration
     |--------------------------------------------------------------------------
     |
-    | Here you may configure the options for the SolutionPlus CMS package.
+    | Here you may configure the options for the SolutionPlus dynamic_pages package.
     |
     */
 

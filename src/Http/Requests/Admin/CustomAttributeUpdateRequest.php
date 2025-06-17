@@ -1,12 +1,12 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Requests\Admin;
+namespace SolutionPlus\DynamicPages\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 use Mabrouk\Translatable\Rules\RequiredForLocale;
-use SolutionPlus\Cms\Rules\UniqueForLocaleWithinParent;
-use SolutionPlus\Cms\Models\CustomAttribute;
+use SolutionPlus\DynamicPages\Rules\UniqueForLocaleWithinParent;
+use SolutionPlus\DynamicPages\Models\CustomAttribute;
 
 class CustomAttributeUpdateRequest extends FormRequest
 {
@@ -42,7 +42,7 @@ class CustomAttributeUpdateRequest extends FormRequest
             'value' => array_merge([
                 function ($attribute, $value, $fail) {
                     if (!$this->custom_attribute->value_validation_text) {
-                        return $fail(__('custom_attributes.errors.value_not_allowed'));
+                        return $fail(__('solutionplus/dynamic_pages/custom_attributes.errors.value_not_allowed'));
                     }
                 }
             ], explode('|', $this->custom_attribute->value_validation_text)),
@@ -64,8 +64,8 @@ class CustomAttributeUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('solutionplus/cms/custom_attributes.attributes.name'),
-            'value' => __('solutionplus/cms/custom_attributes.attributes.value'),
+            'name' => __('solutionplus/dynamic_pages/custom_attributes.attributes.name'),
+            'value' => __('solutionplus/dynamic_pages/custom_attributes.attributes.value'),
         ];
     }
 }

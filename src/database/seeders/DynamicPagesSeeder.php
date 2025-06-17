@@ -1,15 +1,15 @@
 <?php
 
-namespace SolutionPlus\Cms\database\seeders;
+namespace SolutionPlus\DynamicPages\database\seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use SolutionPlus\Cms\Models\CustomAttribute;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Models\Section;
-use SolutionPlus\Cms\Models\SectionItem;
+use SolutionPlus\DynamicPages\Models\CustomAttribute;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Models\Section;
+use SolutionPlus\DynamicPages\Models\SectionItem;
 
-class CmsSeeder extends Seeder
+class DynamicPagesSeeder extends Seeder
 {
     /**
      * Run the database seeds.

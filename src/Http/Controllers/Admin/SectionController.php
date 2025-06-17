@@ -1,14 +1,14 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Admin;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Admin;
 
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Models\Section;
-use SolutionPlus\Cms\Filters\Admin\SectionFilter;
-use SolutionPlus\Cms\Http\Resources\Admin\SectionResource;
-use SolutionPlus\Cms\Http\Requests\Admin\SectionUpdateRequest;
-use SolutionPlus\Cms\Http\Resources\Admin\SectionSimpleResource;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Models\Section;
+use SolutionPlus\DynamicPages\Filters\Admin\SectionFilter;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionResource;
+use SolutionPlus\DynamicPages\Http\Requests\Admin\SectionUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionSimpleResource;
 
 class SectionController extends Controller
 {
@@ -41,7 +41,7 @@ class SectionController extends Controller
         $request->updateSection();
 
         return response([
-            'message' => __('solutionplus/cms/sections.update'),
+            'message' => __('solutionplus/dynamic_pages/sections.update'),
             'section' => new SectionResource($section),
         ]);
     }

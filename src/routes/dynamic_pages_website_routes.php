@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use SolutionPlus\Cms\Http\Controllers\Website\PageController;
+use SolutionPlus\DynamicPages\Http\Controllers\Website\PageController;
 
 Route::group([
     'as' => 'website.',
-    'prefix' => config('cms.package_website_routes_prefix'),
-    'middleware' => array_unique(array_merge(config('cms.middlewares.website'), [
+    'prefix' => config('dynamic_pages.package_website_routes_prefix'),
+    'middleware' => array_unique(array_merge(config('dynamic_pages.middlewares.website'), [
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ])),
 ], function () {

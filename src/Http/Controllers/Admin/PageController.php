@@ -1,13 +1,13 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Admin;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Admin;
 
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Filters\Admin\PageFilter;
-use SolutionPlus\Cms\Http\Resources\Admin\PageResource;
-use SolutionPlus\Cms\Http\Requests\Admin\PageUpdateRequest;
-use SolutionPlus\Cms\Http\Resources\Admin\PageSimpleResource;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Filters\Admin\PageFilter;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\PageResource;
+use SolutionPlus\DynamicPages\Http\Requests\Admin\PageUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\PageSimpleResource;
 
 class PageController extends Controller
 {
@@ -41,7 +41,7 @@ class PageController extends Controller
 
         return response([
             'page' => new PageResource($page),
-            'message' => __('solutionplus/cms/pages.update'),
+            'message' => __('solutionplus/dynamic_pages/pages.update'),
         ]);
     }
 }

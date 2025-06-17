@@ -1,15 +1,15 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers\Admin;
+namespace SolutionPlus\DynamicPages\Http\Controllers\Admin;
 
-use SolutionPlus\Cms\Filters\Admin\SectionItemFilter;
-use SolutionPlus\Cms\Http\Controllers\Controller;
-use SolutionPlus\Cms\Http\Requests\Admin\SectionItemUpdateRequest;
-use SolutionPlus\Cms\Http\Resources\Admin\SectionItemResource;
-use SolutionPlus\Cms\Http\Resources\Admin\SectionItemSimpleResource;
-use SolutionPlus\Cms\Models\Page;
-use SolutionPlus\Cms\Models\Section;
-use SolutionPlus\Cms\Models\SectionItem;
+use SolutionPlus\DynamicPages\Filters\Admin\SectionItemFilter;
+use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Http\Requests\Admin\SectionItemUpdateRequest;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionItemResource;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionItemSimpleResource;
+use SolutionPlus\DynamicPages\Models\Page;
+use SolutionPlus\DynamicPages\Models\Section;
+use SolutionPlus\DynamicPages\Models\SectionItem;
 
 class SectionItemController extends Controller
 {
@@ -42,7 +42,7 @@ class SectionItemController extends Controller
         $request->sectionItemUpdate();
 
         return response([
-            'message' => __('solutionplus/cms/section_items.update'),
+            'message' => __('solutionplus/dynamic_pages/section_items.update'),
             'section_item' => new SectionItemResource($section_item),
         ]);
     }

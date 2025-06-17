@@ -1,20 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use SolutionPlus\Cms\Http\Controllers\Admin\KeywordController;
-use SolutionPlus\Cms\Http\Controllers\Admin\PageController;
-use SolutionPlus\Cms\Http\Controllers\Admin\PageKeywordController;
-use SolutionPlus\Cms\Http\Controllers\Admin\SectionController;
-use SolutionPlus\Cms\Http\Controllers\Admin\SectionCustomAttributeController;
-use SolutionPlus\Cms\Http\Controllers\Admin\SectionItemController;
-use SolutionPlus\Cms\Http\Controllers\Admin\SectionItemCustomAttributeController;
-use SolutionPlus\Cms\Http\Controllers\Admin\SectionItemMediaController;
-use SolutionPlus\Cms\Http\Controllers\Admin\SectionMediaController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\KeywordController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\PageController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\PageKeywordController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\SectionController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\SectionCustomAttributeController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\SectionItemController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\SectionItemCustomAttributeController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\SectionItemMediaController;
+use SolutionPlus\DynamicPages\Http\Controllers\Admin\SectionMediaController;
 
 Route::group([
     'as' => 'admin.',
-    'prefix' => config('cms.package_admin_routes_prefix'),
-    'middleware' => array_unique(array_merge(config('cms.middlewares.admin'), [
+    'prefix' => config('dynamic_pages.package_admin_routes_prefix'),
+    'middleware' => array_unique(array_merge(config('dynamic_pages.middlewares.admin'), [
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ])),
 ], function () {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionPlus\Cms\Http\Controllers;
+namespace SolutionPlus\DynamicPages\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
