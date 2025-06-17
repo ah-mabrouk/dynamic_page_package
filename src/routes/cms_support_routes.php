@@ -10,10 +10,10 @@ use SolutionPlus\Cms\Http\Controllers\Support\SectionItemMediaController;
 use SolutionPlus\Cms\Http\Controllers\Support\SectionMediaController;
 
 Route::group([
+    'as' => 'support.',
     'prefix' => config('cms.package_support_routes_prefix'),
     'middleware' => array_unique(array_merge(config('cms.middlewares.support'), [
-        'auth:api',
-        'translatable',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ])),
 ], function () {
     Route::apiResource('pages', PageController::class);

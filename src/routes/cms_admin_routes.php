@@ -12,11 +12,10 @@ use SolutionPlus\Cms\Http\Controllers\Admin\SectionItemMediaController;
 use SolutionPlus\Cms\Http\Controllers\Admin\SectionMediaController;
 
 Route::group([
+    'as' => 'admin.',
     'prefix' => config('cms.package_admin_routes_prefix'),
     'middleware' => array_unique(array_merge(config('cms.middlewares.admin'), [
-        'auth:api',
-        'permission-officer',
-        'translatable',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ])),
 ], function () {
     Route::apiResource('pages', PageController::class)->except(['store', 'destroy']);
