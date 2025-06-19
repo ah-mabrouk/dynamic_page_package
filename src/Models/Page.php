@@ -2,7 +2,6 @@
 
 namespace SolutionPlus\DynamicPages\Models;
 
-use SolutionPlus\DynamicPages\Traits\HasTimezoneFields;
 use Illuminate\Database\Eloquent\Model;
 use Mabrouk\Filterable\Traits\Filterable;
 use Mabrouk\Translatable\Traits\Translatable;
@@ -12,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Page extends Model
 {
-    use HasFactory, Translatable, Filterable, HasTimezoneFields;
+    use HasFactory, Translatable, Filterable;
 
     public $translatedAttributes = [
         'name',
