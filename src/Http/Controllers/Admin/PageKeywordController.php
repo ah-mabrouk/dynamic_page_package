@@ -4,6 +4,7 @@ namespace SolutionPlus\DynamicPages\Http\Controllers\Admin;
 
 use SolutionPlus\DynamicPages\Filters\Admin\KeywordFilter;
 use SolutionPlus\DynamicPages\Http\Controllers\Controller;
+use SolutionPlus\DynamicPages\Models\Keyword;
 use SolutionPlus\DynamicPages\Models\Page;
 use SolutionPlus\DynamicPages\Http\Requests\Admin\PageKeywordStoreRequest;
 use SolutionPlus\DynamicPages\Http\Resources\Admin\KeywordResource;
@@ -16,7 +17,7 @@ class PageKeywordController extends Controller
      */
     public function index(Page $page, KeywordFilter $filters)
     {
-        $paginationLength = pagination_length('Keyword');
+        $paginationLength = pagination_length(Keyword::class);
         $keywords = $page->keywords()->filter($filters)->paginate($paginationLength);
 
         return KeywordResource::collection($keywords);

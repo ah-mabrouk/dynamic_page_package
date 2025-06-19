@@ -14,7 +14,7 @@ class PageController extends Controller
      */
     public function index(PageFilter $filter)
     {
-        $paginationLength = pagination_length('Page');
+        $paginationLength = pagination_length(Page::class);
         $pages = Page::filter($filter)->paginate($paginationLength);
 
         return PageResource::collection($pages);

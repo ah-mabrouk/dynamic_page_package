@@ -19,7 +19,7 @@ class SectionItemController extends Controller
      */
     public function index(Page $page, Section $section, SectionItemFilter $filter)
     {
-        $paginationLength = pagination_length('SectionItem');
+        $paginationLength = pagination_length(SectionItem::class);
         $sectionItems = $section->sectionItems()->filter($filter)->paginate($paginationLength);
 
         return SectionItemSimpleResource::collection($sectionItems);

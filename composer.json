@@ -35,11 +35,7 @@
             "SolutionPlus\\DynamicPages\\": "src/",
             "Database\\Factories\\": "src/database/factories/",
             "Database\\Seeders\\": "src/database/seeders/"
-        },
-        "files": [
-            "src/Helpers/DynamicPagesHelperFunctions.php",
-            "src/Helpers/Tz.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {

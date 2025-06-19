@@ -2,7 +2,6 @@
 
 namespace SolutionPlus\DynamicPages\Models;
 
-use SolutionPlus\DynamicPages\Traits\HasTimezoneFields;
 use Mabrouk\Mediable\Models\Media;
 use Mabrouk\Mediable\Traits\Mediable;
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SectionItem extends Model
 {
-    use HasFactory, Translatable, Filterable, Mediable, HasTimezoneFields;
+    use HasFactory, Translatable, Filterable, Mediable;
 
     public $translatedAttributes = [
         'name',
