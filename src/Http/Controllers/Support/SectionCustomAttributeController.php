@@ -17,7 +17,7 @@ class SectionCustomAttributeController extends Controller
      */
     public function index(Page $page, Section $section)
     {
-        $paginationLength = pagination_length('CustomAttribute');
+        $paginationLength = pagination_length(CustomAttribute::class);
         $customAttributes = $section->customAttributes()->paginate($paginationLength);
 
         return CustomAttributeResource::collection($customAttributes);

@@ -16,7 +16,7 @@ class KeywordController extends Controller
      */
     public function index(KeywordFilter $filters)
     {
-        $paginationLength = pagination_length('Keyword');
+        $paginationLength = pagination_length(Keyword::class);
         $keywords = Keyword::filter($filters)->paginate($paginationLength);
 
         return KeywordResource::collection($keywords);
