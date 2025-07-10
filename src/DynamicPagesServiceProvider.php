@@ -5,6 +5,7 @@ namespace SolutionPlus\DynamicPages;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use SolutionPlus\DynamicPages\Console\Commands\DynamicPagesPublishRoutesCommand;
 use SolutionPlus\DynamicPages\Console\Commands\DynamicPagesSetupCommand;
 
 class DynamicPagesServiceProvider extends ServiceProvider
@@ -47,7 +48,8 @@ class DynamicPagesServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
 
             $this->commands([
-                DynamicPagesSetupCommand::class
+                DynamicPagesSetupCommand::class,
+                DynamicPagesPublishRoutesCommand::class,
             ]);
 
             $this->publishMigrations();

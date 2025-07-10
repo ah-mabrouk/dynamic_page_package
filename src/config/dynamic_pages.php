@@ -80,6 +80,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Routes publish subdirectory
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the subdirectory where the package routes should be
+    | published inside the project's routes folder. This allows you to customize the location of the published
+    | routes files.
+    |
+    */
+    # eg: 'routes_publish_subdirectory' => 'custom/',
+    'routes_publish_subdirectory' => '',
+
+    /*
+    |--------------------------------------------------------------------------
     | Load Routes
     |--------------------------------------------------------------------------
     |
