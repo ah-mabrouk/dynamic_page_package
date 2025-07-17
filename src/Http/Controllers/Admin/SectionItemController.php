@@ -30,6 +30,7 @@ class SectionItemController extends Controller
     public function show(Page $page, Section $section, SectionItem $section_item)
     {
         $section_item->load([
+            'section.translations',
             'media',
             'customAttributes.translations'
         ]);
