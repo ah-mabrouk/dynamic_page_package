@@ -27,4 +27,4 @@ class PageResource extends JsonResource
             'sections' => SectionSimpleResource::collection($this->sections),
         ];
     }
-} 
+}

@@ -1,10 +1,10 @@
 <?php
 
-namespace SolutionPlus\DynamicPages\Http\Resources\Website;
+namespace SolutionPlus\DynamicPages\Http\Resources\Admin;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PageResource extends JsonResource
+class SectionItemSimplestResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,14 +17,11 @@ class PageResource extends JsonResource
         return [
             'id' => $this->id,
 
-            'path' => $this->path,
+            'identifier' => $this->identifier,
 
             'name' => $this->name,
             'title' => $this->title,
             'description' => $this->description,
-
-            'keywords' => KeywordResource::collection($this->visibleKeywords),
-            'sections' => SectionResource::collection($this->sections),
         ];
     }
-} 
+}

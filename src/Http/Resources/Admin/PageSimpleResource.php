@@ -24,4 +24,4 @@ class PageSimpleResource extends JsonResource
             'description' => $this->description,
         ];
     }
-} 
+}

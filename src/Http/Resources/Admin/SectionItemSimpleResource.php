@@ -3,6 +3,7 @@
 namespace SolutionPlus\DynamicPages\Http\Resources\Admin;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Mabrouk\Mediable\Http\Resources\MediaResource;
 
 class SectionItemSimpleResource extends JsonResource
 {
@@ -22,6 +23,9 @@ class SectionItemSimpleResource extends JsonResource
             'name' => $this->name,
             'title' => $this->title,
             'description' => $this->description,
+
+            'images' => MediaResource::collection($this->images),
+            'custom_attributes' => CustomAttributeResource::collection($this->customAttributes),
         ];
     }
-} 
+}
