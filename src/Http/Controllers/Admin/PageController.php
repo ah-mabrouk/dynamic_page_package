@@ -7,7 +7,6 @@ use SolutionPlus\DynamicPages\Models\Page;
 use SolutionPlus\DynamicPages\Filters\Admin\PageFilter;
 use SolutionPlus\DynamicPages\Http\Resources\Admin\PageResource;
 use SolutionPlus\DynamicPages\Http\Requests\Admin\PageUpdateRequest;
-use SolutionPlus\DynamicPages\Http\Resources\Admin\PageSimpleResource;
 
 class PageController extends Controller
 {
@@ -17,9 +16,18 @@ class PageController extends Controller
     public function index(PageFilter $filter)
     {
         $paginationLength = pagination_length(Page::class);
-        $pages = Page::filter($filter)->paginate($paginationLength);
+        $pages = Page::filter($filter)->with([
+            'translations',
+            'sections.translations',
+            'sections.media',
+            'sections.customAttributes.translations',
+            'sections.sectionItems.translations',
+            'sections.sectionItems.media',
+            'sections.sectionItems.customAttributes.translations',
+            'keywords.translations',
+        ])->paginate($paginationLength);
 
-        return PageSimpleResource::collection($pages);
+        return PageResource::collection($pages);
     }
 
     /**
@@ -27,6 +35,17 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
+        $page->load([
+            'translations',
+            'sections.translations',
+            'sections.media',
+            'sections.customAttributes.translations',
+            'sections.sectionItems.translations',
+            'sections.sectionItems.media',
+            'sections.sectionItems.customAttributes.translations',
+            'keywords.translations',
+        ]);
+
         return response([
             'page' => new PageResource($page),
         ]);

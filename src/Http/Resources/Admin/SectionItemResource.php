@@ -24,9 +24,7 @@ class SectionItemResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
 
-            'section' => new SectionSimpleResource($this->section),
             'images' => MediaResource::collection($this->images),
-
             'custom_attributes' => CustomAttributeResource::collection($this->customAttributes),
         ];
     }

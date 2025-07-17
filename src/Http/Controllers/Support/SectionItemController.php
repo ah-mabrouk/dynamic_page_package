@@ -20,7 +20,7 @@ class SectionItemController extends Controller
     public function index(Page $page, Section $section, SectionItemFilter $filter)
     {
         $paginationLength = pagination_length(SectionItem::class);
-        $sectionItems = $section->sectionItems()->filter($filter)->paginate($paginationLength);
+        $sectionItems = $section->sectionItems()->filter($filter)->with('translations')->paginate($paginationLength);
 
         return SectionItemSimpleResource::collection($sectionItems);
     }
@@ -43,6 +43,12 @@ class SectionItemController extends Controller
      */
     public function show(Page $page, Section $section, SectionItem $section_item)
     {
+        $section_item->load([
+            'section.translations'
+            'media',
+            'customAttributes.translations'
+        ]);
+
         return response([
             'section_item' => new SectionItemResource($section_item),
         ]);

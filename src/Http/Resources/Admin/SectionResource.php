@@ -33,9 +33,8 @@ class SectionResource extends JsonResource
             'has_items_title' => $this->has_items_title,
             'has_items_description' => $this->has_items_description,
 
-            'page' => new PageSimpleResource($this->page),
             'images' => MediaResource::collection($this->images),
-            'items' => SectionItemSimpleResource::collection($this->sectionItems),
+            'items' => SectionItemResource::collection($this->sectionItems),
             'custom_attributes' => CustomAttributeResource::collection($this->customAttributes),
         ];
     }

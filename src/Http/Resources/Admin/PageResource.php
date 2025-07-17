@@ -24,7 +24,7 @@ class PageResource extends JsonResource
             'description' => $this->description,
 
             'keywords' => KeywordResource::collection($this->keywords),
-            'sections' => SectionSimpleResource::collection($this->sections),
+            'sections' => SectionResource::collection($this->sections),
         ];
     }
 } 
