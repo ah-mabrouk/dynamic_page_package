@@ -43,7 +43,7 @@ class SectionController extends Controller
     public function show(Page $page, Section $section)
     {
         $section->load([
-            'page.translations'
+            'page.translations',
             'media',
             'customAttributes.translations',
             'sectionItems.translations',
