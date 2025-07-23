@@ -52,6 +52,11 @@ class SectionItem extends Model
         return $this->media;
     }
 
+    public function getHasCustomAttributesAttribute()
+    {
+        return $this->customAttributes()->exists();
+    }
+
     ## Scopes
 
     ## Other Methods

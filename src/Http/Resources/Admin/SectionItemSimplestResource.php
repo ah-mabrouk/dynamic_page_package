@@ -22,6 +22,7 @@ class SectionItemSimplestResource extends JsonResource
             'name' => $this->name,
             'title' => $this->title,
             'description' => $this->description,
+            'has_custom_attributes' => $this->hasCustomAttributes
         ];
     }
 }

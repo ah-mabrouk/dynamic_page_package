@@ -31,6 +31,7 @@ class SectionSimplestResource extends JsonResource
             'item_images_count' => $this->item_images_count,
             'has_items_title' => $this->has_items_title,
             'has_items_description' => $this->has_items_description,
+            'has_custom_attributes' => $this->hasCustomAttributes
         ];
     }
 }
