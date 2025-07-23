@@ -8,7 +8,7 @@ use SolutionPlus\DynamicPages\Models\Section;
 use SolutionPlus\DynamicPages\Filters\Admin\SectionFilter;
 use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionResource;
 use SolutionPlus\DynamicPages\Http\Requests\Admin\SectionUpdateRequest;
-use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionSimplestResource;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionSimpleResource;
 
 class SectionController extends Controller
 {
@@ -20,7 +20,7 @@ class SectionController extends Controller
         $paginationLength = pagination_length(Section::class);
         $sections = $page->sections()->filter($filters)->with('translations')->paginate($paginationLength);
 
-        return SectionSimplestResource::collection($sections);
+        return SectionSimpleResource::collection($sections);
     }
 
     /**
@@ -33,8 +33,7 @@ class SectionController extends Controller
             'media',
             'customAttributes.translations',
             'sectionItems.translations',
-            'sectionItems.media',
-            'sectionItems.customAttributes.translations'
+            'sectionItems.customAttributes'
         ]);
 
         return response([

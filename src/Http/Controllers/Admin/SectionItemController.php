@@ -6,7 +6,7 @@ use SolutionPlus\DynamicPages\Filters\Admin\SectionItemFilter;
 use SolutionPlus\DynamicPages\Http\Controllers\Controller;
 use SolutionPlus\DynamicPages\Http\Requests\Admin\SectionItemUpdateRequest;
 use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionItemResource;
-use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionItemSimplestResource;
+use SolutionPlus\DynamicPages\Http\Resources\Admin\SectionItemSimpleResource;
 use SolutionPlus\DynamicPages\Models\Page;
 use SolutionPlus\DynamicPages\Models\Section;
 use SolutionPlus\DynamicPages\Models\SectionItem;
@@ -21,7 +21,7 @@ class SectionItemController extends Controller
         $paginationLength = pagination_length(SectionItem::class);
         $sectionItems = $section->sectionItems()->filter($filters)->with('translations')->paginate($paginationLength);
 
-        return SectionItemSimplestResource::collection($sectionItems);
+        return SectionItemSimpleResource::collection($sectionItems);
     }
 
     /**
